@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="sv">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Ordspelet</title>
+  </head>
+  <body>
+    <h1>Ordspelet</h1>
+
+    <form method="POST">
+      <input type="text" name="user_input" placeholder="Skriv ett ord" />
+      <button type="submit" name="startgame">Starta spel</button>
+      <button type="submit" name="stopgame">Avsluta spel</button>
+    </form>
+
+    {% if response %}
+    <p>{{ response }}</p>
+    {% endif %} {% if gameon %}
+    <p>Spelet är igång!</p>
+    {% else %}
+    <p>Spelet är inte igång.</p>
+    {% endif %}
+  </body>
+</html>
