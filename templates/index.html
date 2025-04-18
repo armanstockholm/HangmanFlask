@@ -2,23 +2,27 @@
 <html lang="sv">
   <head>
     <meta charset="UTF-8" />
-    <title>Ordspelet</title>
+    <title>Hangman</title>
   </head>
   <body>
-    <h1>Ordspelet</h1>
+    <h1>Hangman</h1>
 
     <form method="POST">
       <input type="text" name="user_input" placeholder="Skriv ett ord" />
       <button type="submit" name="startgame">Starta spel</button>
       <button type="submit" name="stopgame">Avsluta spel</button>
+      <button type="submit" name="guess">Gissa!</button>
     </form>
 
     {% if response %}
-    <p>{{ response }}</p>
+    <pre>{{ response }}</pre>
     {% endif %} {% if gameon %}
     <p>Spelet är igång!</p>
+    <p style="letter-spacing: 3px">Ditt ord: {{under_line}}</p>
+    <p style="letter-spacing: 3px">Dina gissningar: {{ guesses }}</p>
+    <pre>{{hangman_stages}}</pre>
     {% else %}
-    <p>Spelet är inte igång.</p>
+    <p>Skriv in ett ord och tryck på starta spel!</p>
     {% endif %}
   </body>
 </html>
